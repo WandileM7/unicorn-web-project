@@ -1,0 +1,31 @@
+<settings>
+<servers>
+  <server>
+    <id>unicorns-maven-central-store</id>
+    <username>aws</username>
+    <password>${env.CODEARTIFACT_AUTH_TOKEN}</password>
+  </server>
+</servers>
+<profiles>
+  <profile>
+    <id>unicorns-maven-central-store</id>
+    <activation>
+      <activeByDefault>true</activeByDefault>
+    </activation>
+    <repositories>
+      <repository>
+        <id>unicorns-maven-central-store</id>
+        <url>https://unicorns-050752645097.d.codeartifact.eu-west-1.amazonaws.com/maven/maven-central-store/</url>
+      </repository>
+    </repositories>
+  </profile>
+</profiles>
+<mirrors>
+  <mirror>
+    <id>unicorns-maven-central-store</id>
+    <name>unicorns-maven-central-store</name>
+    <url>https://unicorns-050752645097.d.codeartifact.eu-west-1.amazonaws.com/maven/maven-central-store/</url>
+    <mirrorOf>*</mirrorOf>
+  </mirror>
+</mirrors>
+</settings>
